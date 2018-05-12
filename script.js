@@ -1,22 +1,32 @@
 document.addEventListener('DOMContentLoaded', function (){
 var i=0;
-var timer=0;
+var timer =0;
 var backspace=1;
-var text="nimish the great is making type speed";
+var text="a worm hole can connect two different part of universe but is a hypothetical concept";
 var typed=document.querySelector('#type-area');
+var result =document.querySelector('#result');
 typed.addEventListener('keydown',function(e){
-	if(!timer)
-	{const timeinit =Date.now();
-timer++;
-console.log(timeinit);
-	}
+if(!timer)
+{
 	
-if(i!=text.length)
-   { if(backspace && e.key!='Backspace' )
+	startTimer = new Date();
+	timer++;
+}
+    if(backspace && e.key!='Backspace' )
   	{if(e.key==text[i] )
   	{
 		backspace=1;//backspace prevented
         i++;
+        if(i==text.length)
+        {
+        	 endTimer = new Date();
+        	 const timeTaken = (endTimer.getTime() - startTimer.getTime()) / 1000;
+        	 const speed= text.length/timeTaken;
+            result.innerHTML= speed; 
+         
+ 
+            console.log(speed);
+        }
 	}
     else
     {
@@ -36,25 +46,10 @@ if(i!=text.length)
 	}
 	
 	
-}}
-else{
-
-	var timefinal=Date.now();
-	console.log(timefinal);
 }
 
 }
-
-
-
-
-	
-	 
 
 
 
 	)})
-
-
-// var d =  Date.now();
-// console.log(d);
