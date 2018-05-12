@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function (){
+document.addEventListener('DOMContentLoaded', function (){console.log('ntg');
 var i=0;
 var timer =0;
 var backspace=1;
